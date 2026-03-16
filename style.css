@@ -1,0 +1,699 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    background-color:rgb(6, 3, 12);
+    color: #e7e7e7;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+.image-gradient{
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
+
+}
+.layer-blur{
+    height: 0;
+    width: 30rem;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    box-shadow: 0 0 700px 15px white;
+    rotate: -30deg;
+    z-index: 1;
+}
+
+
+/* Container */
+.container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    z-index: 10;
+    gap: 2rem; /* Added for better spacing */
+    position: relative; /* Ensure the header is positioned properly */
+}
+
+header h1{
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-left: auto; /* Changed from -5% to auto for better flex behavior */
+}
+
+nav a{
+    font-size: 1rem;
+    letter-spacing: 0.1rem; /* Ensure no extra characters here */
+    transition: color 0.2s ease; /* Correct syntax */
+    text-decoration: none;
+    color: inherit;
+}
+nav a:hover{
+    color:#a7a7a7;
+}
+nav a, nav .btn-signing-main {
+  pointer-events: auto; /* Ensure links are clickable */
+  text-decoration: none;
+}
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 0.8; /* Reduced from 1 to bring text closer */
+}
+.main-logo {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-left: -5%;
+    padding: 0;
+    opacity: 0.2;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 0;
+    opacity: 0.2;
+}
+
+.sub-logo {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(231, 231, 231, 0.7);
+    margin: -0.8rem 0 0 0.1rem; /* Increased negative margin-top */
+    padding: 0;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    margin-left: -2%;
+}
+.btn-signing {
+background-color: #a7a7a7;
+color: black;
+padding: 0.8rem 1rem;
+border-radius: 50px;
+border: none;
+font-size: 0.75 rem;
+font-weight: 500;
+transition: background-color 0.2s ease;
+cursor: pointer;
+}
+.btn-signing:hover {
+background-color:white;
+}
+
+/* MAIN CONTENT */
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(90vh - 6rem);
+}
+.content-wrapper {
+  display: flex;
+  align-items: center; /* Vertically align content and Spline */
+  justify-content: space-between; /* Add space between content and Spline */
+  gap: 2rem; /* Add spacing between the two sections */
+  width: 100%; /* Ensure it spans the full width */
+  height: 100vh; /* Ensure it spans the full viewport height */
+  overflow: visible; /* Prevent clipping of child elements */
+  margin-top: -5%;
+}
+.content{
+    flex: 1; /* Allow the content to take up available space */
+    max-width: 40rem;
+    margin-left: 10%;
+    z-index: 999;
+}
+.tag-box{
+    position: relative;
+    width: 18rem;
+    height: 2.5rem;
+    border-radius: 50px;
+    background: linear-gradient(to right, #656565, #7f42a7, #6600c5, #5300a0, #757575, #656565);
+    background-size: 200%; 
+    animation: animationGradient 2.5s linear infinite;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+@keyframes animationGradient {
+    to{
+        background-position: 200%;
+    }
+}
+.content h1 {
+    font-size: 3rem; /* Decreased from 4rem to 3rem */
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    margin: 2rem 0;
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba(128, 128, 128, 0.418);
+}
+
+.description{ 
+font-size: 1.2rem;
+letter-spacing: 0.05em;
+max-width: 35rem;
+color:gray;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.btn-get-started{
+    text-decoration: none;
+    border: 1px solid#2a2a2a;
+    padding: 0.7rem 1.2rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: background-color 0.2s ease;
+}
+.btn-get-started:hover{
+    background-color: #1a1a1a;
+}
+.btn-signing-main {
+    text-decoration: none;
+    background-color: lightgray;
+    color: black;
+    padding: 0.6rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: background-color 0.2s ease;
+
+}
+.btn-signing-main:hover{
+background-color: gray;
+}
+.robot-3d{
+    display: flex; /* Allow the Spline model to take up available space */
+    max-width: auto; /* Allow the Spline model to use the full width */
+    height: auto; /* Ensure it takes up the full height of the container */
+    position: relative; /* Ensure proper positioning */
+    scale: 0.8; /* Increased scale to make the robot larger */
+    overflow: visible; /* Ensure no part of the model is clipped */
+    margin-top: -10%; /* Adjust margin to reposition the robot */ /* Adjust margin to reposition the robot */
+    z-index: 1;
+}
+/* TABLET RESPONSIVE */
+@media (max-width: 1300px){
+    header{
+        padding: 1rem 0.5rem;
+    }
+
+    .content{
+        margin-top: 85%;
+    }
+    .robot-3d{
+        scale: 0.8;
+        max-width: 100%;
+        height: auto;
+        top: -20%;
+        right: 2;
+    }
+}
+
+.register-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 10px;
+  background-color: #000;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+  margin-top: 60%;
+  margin-left: -25%;
+}
+
+.register-logo {
+  font-family: 'Copperplate';
+  font-size: 1rem;
+  margin-bottom: 10px;
+  
+}
+
+.register-subtitle {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #ccc;
+  
+}
+
+.btn-google {
+  width: 100%;
+  padding: 10px;
+  background-color: #7653c6;
+  color: rgb(187, 175, 213);
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.btn-google:hover {
+  background-color: #1c142f;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  color: #ccc;
+}
+
+.divider span {
+  background-color: #000;
+  padding: 0 10px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #262626;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #262626;
+  border-radius: 4px;
+  background-color: #121212;
+  color: #fff;
+}
+
+.form-group input::placeholder {
+  color: #ccc;
+}
+
+.register-terms {
+  font-size: 0.8rem;
+  color: #ccc;
+  margin: 10px 0;
+}
+
+.register-terms a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-terms a:hover {
+  text-decoration: underline;
+}
+
+.btn-register {
+  width: 100%;
+  padding: 10px;
+  background-color: #7653c6;
+  color: rgb(187, 175, 213);
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-register:hover {
+  background-color: #1c142f;
+}
+
+.login-link {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.login-link a {
+  color: #0095f6;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.phone-input {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.country-code {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.phone-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1); /* Add slight transparency */
+  color: #fff; /* Adjust input text color */
+}
+
+.phone-input input::placeholder {
+  color: #ccc; /* Adjust placeholder color */
+}
+
+.contact-bg {
+  background: radial-gradient(circle at 50% 0%, #222 60%, #1a1a2e 100%);
+  min-height: 100vh;
+  padding: 40px 0;
+  color: #fff;
+}
+.contact-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.contact-container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+
+.contact-container p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #cfd8dc;
+  margin-bottom: 24px;
+}
+.contact-demo-btn {
+  margin: 20px 0;
+  padding: 12px 32px;
+  background: #7653c6;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.contact-cards {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.contact-card {
+  background: rgba(30, 30, 50, 0.9);
+  border-radius: 16px;
+  padding: 32px 24px;
+  width: 260px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center all content horizontally */
+  text-align: center;  /* Center text as well */
+}
+.contact-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.contact-card p {
+  font-size: 1rem;
+  color: #b0bec5;
+}
+.contact-btn {
+  margin-top: 16px;
+  padding: 10px 24px;
+  background: #222;
+  color: #7653c6;
+  border: 1px solid #7653c6;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 10px 24px;
+  align-self: center; /* Ensure the button itself is centered */
+}
+
+/* About Us page styles */
+.about-bg {
+  min-height: 100vh;
+  background: #181c2f;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+.about-container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+.about-logo {
+  width: 80px;
+  margin-bottom: 16px;
+  opacity: 0.7; /* Adjust between 0 (fully transparent) and 1 (fully opaque) */
+}
+.about-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+.about-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.about-link-btn {
+  background: #b3a4e6;
+  color: #181c2f;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 0;
+  text-decoration: none;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.about-link-btn:hover {
+  background: #7653c6;
+  color: #fff;
+}
+.about-section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #b3a4e6;
+  letter-spacing: 0.5px;
+}
+.about-desc {
+  font-size: 1.1rem;
+  color: #cfd8dc;
+  margin: 14px 0;
+  font-weight: 400;
+  line-height: 1.7;
+}
+.about-list {
+  text-align: left;
+  margin: 18px auto 28px auto;
+  display: inline-block;
+  color: #fff;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.logo-img {
+  opacity: 0.7;
+}
+
+.tournament-bg {
+  min-height: 100vh;
+  background: #15172b;
+  color: #fff;
+  font-family: 'Inter', Arial, sans-serif;
+}
+.tournament-header {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+.tournament-banner {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+.tournament-header-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -40%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tournament-game-logo {
+  width: 60px;
+  margin-bottom: 8px;
+}
+.tournament-header-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.tournament-tabs {
+  display: flex;
+  gap: 24px;
+  margin: 24px 0 0 60px;
+}
+.tab {
+  background: none;
+  border: none;
+  color: #b3a4e6;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 8px 0;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: border 0.2s;
+}
+.tab.active {
+  color: #fff;
+  border-bottom: 2px solid #3e5cff;
+}
+.tournament-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 0;
+}
+.tournament-main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.tournament-main-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.view-all-btn {
+  background: none;
+  border: 1px solid #3e5cff;
+  color: #3e5cff;
+  padding: 6px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.view-all-btn:hover {
+  background: #3e5cff;
+  color: #fff;
+}
+.tournament-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+.tournament-card {
+  background: #23243a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+.tournament-card:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+.tournament-card-banner {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+.tournament-card-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+}
+.tournament-card-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #fff;
+  padding: 4px;
+}
+.tournament-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+.tournament-card-date {
+  font-size: 0.98rem;
+  color: #b3a4e6;
+  margin: 2px 0;
+}
+.tournament-card-status {
+  color: #1ed760;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.tournament-card-teams {
+  color: #b3a4e6;
+  font-size: 0.95rem;
+}
