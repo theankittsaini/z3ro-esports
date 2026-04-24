@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import Layout from "./Layout";
+import { supabase } from "./supabaseClient";
 import "../style.css";
 
 function Register() {
+  const [authError, setAuthError] = useState("");
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const [formData, setFormData] = useState({
     emailOrPhone: "",
     password: "",
@@ -21,12 +24,45 @@ function Register() {
     // Add API call here to send data to the backend
   };
 
+  const handleGoogleLogin = async () => {
+    setAuthError("");
+    setIsGoogleLoading(true);
+
+    if (!supabase) {
+      setAuthError(
+        "Missing Supabase config. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY."
+      );
+      setIsGoogleLoading(false);
+      return;
+    }
+
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: window.location.origin,
+      },
+    });
+
+    if (error) {
+      setAuthError(error.message);
+      setIsGoogleLoading(false);
+    }
+  };
+
   return (
     <Layout>
       <div className="register-container">
         <h1 className="register-logo">WELCOME</h1>
         
-        <button className="btn-google">Log in with Google</button>
+        <button
+          className="btn-google"
+          type="button"
+          onClick={handleGoogleLogin}
+          disabled={isGoogleLoading}
+        >
+          {isGoogleLoading ? "Connecting..." : "Log in with Google"}
+        </button>
+        {authError && <p className="auth-error">{authError}</p>}
         <div className="divider">
           <span>OR</span>
         </div>
