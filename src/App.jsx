@@ -5,7 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Spline from "@splinetool/react-spline";
 import Register from "./Register";
-import Contact from "./Contact";
+import Contact from "./contact";
 import Header from "./Header";
 import About from "./About";
 import Tournament from "./Tournament";
